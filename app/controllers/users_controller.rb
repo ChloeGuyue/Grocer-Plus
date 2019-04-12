@@ -14,7 +14,8 @@ class UsersController < ApplicationController
 	    @budget = current_user.budget
 	    @time = current_user.time
 	    @cuisine = current_user.cuisine
-	    @calories = self.class.calc_calories(@gender, @weight, @height, @age, @exercise, @goal)
+		@calories = self.class.calc_calories(@gender, @weight, @height, @age, @exercise, @goal)
+		Recipe.search_api
 	end
 
 	def self.calc_calories(gender, weight, height, age, exercise, goal)
