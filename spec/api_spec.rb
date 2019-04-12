@@ -7,7 +7,7 @@ describe UsersController do
         end
         it 'selects the show template for rendering' do
             @fake_results = [instance_double('Recipe')]
-            allow('Recipe').to receive(:find_in_api).and_return(@fake_results)
+            allow('Recipe').to receive(:search_api).and_return(@fake_results)
             post 'search_api', {:search_parameters => 'food'}
             expect(assigns(:recipes)).to eq(@fake_results)
         end

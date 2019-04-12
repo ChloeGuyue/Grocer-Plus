@@ -1,4 +1,4 @@
 class Recipe < ActiveRecord::Base
-    self.search_api do
+    def self.search_api 
     end
 end
