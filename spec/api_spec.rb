@@ -5,12 +5,12 @@ describe UsersController do
             expect(Recipe).to receive(:find_in_api).with(2000, 'week')
             get 'show'
         end
-        it 'selects the show template for rendering' do
-            @fake_results = [instance_double('Recipe')]
-            allow('Recipe').to receive(:search_api).and_return(@fake_results)
-            post 'search_api', {:search_parameters => 'food'}
-            expect(assigns(:recipes)).to eq(@fake_results)
-        end
+        #it 'selects the show template for rendering' do
+            #@fake_results = [instance_double('Recipe')]
+           # allow('Recipe').to receive(:search_api).and_return(@fake_results)
+            #post 'search_api', {:search_parameters => 'food'}
+            #expect(assigns(:recipes)).to eq(@fake_results)
+        #end
 
         #it 'makes the api search results available to that template'
     end
